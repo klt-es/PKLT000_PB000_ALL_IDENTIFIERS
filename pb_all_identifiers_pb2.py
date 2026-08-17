@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n\x18pb_all_identifiers.proto\x1a\x0cnanopb.proto*z\n\x10pb_device_type_e\x12\x15\n\x11\x44\x45VICE_TYPE__NONE\x10\x00\x12*\n%DEVICE_TYPE__BOTTLECRUSHER_CONTROLLER\x10\x80\x02\x12#\n\x1e\x44\x45VICE_TYPE__BOTTLECRUSHER_SSR\x10\x80\x04*M\n\x12pb_protocol_type_e\x12\x17\n\x13PROTOCOL_TYPE__NONE\x10\x00\x12\x1e\n\x19PROTOCOL_TYPE__BOOTLOADER\x10\x80\x02\x62\x06proto3'
+  serialized_pb=b'\n\x18pb_all_identifiers.proto\x1a\x0cnanopb.proto*\xe3\x01\n\x10pb_device_type_e\x12\x15\n\x11\x44\x45VICE_TYPE__NONE\x10\x00\x12*\n%DEVICE_TYPE__BOTTLECRUSHER_CONTROLLER\x10\x80\x02\x12#\n\x1e\x44\x45VICE_TYPE__BOTTLECRUSHER_SSR\x10\x80\x04\x12%\n DEVICE_TYPE__BRITEBIN_CONTROLLER\x10\x80\x06\x12 \n\x1b\x44\x45VICE_TYPE__TRUEAIM_CLIPON\x10\x80\x08\x12\x1e\n\x19\x44\x45VICE_TYPE__SEISNODE_DLB\x10\x80\n*\xfb\x02\n\x12pb_protocol_type_e\x12\x17\n\x13PROTOCOL_TYPE__NONE\x10\x00\x12\x1d\n\x19PROTOCOL_TYPE__RAW_STRING\x10\x01\x12 \n\x1cPROTOCOL_TYPE__PB_BOOTLOADER\x10\x02\x12\x1f\n\x1bPROTOCOL_TYPE__PB_DISCOVERY\x10\x03\x12&\n\x1fPROTOCOL_TYPE__PB_BOTTLECRUSHER\x10\x84\x80\x80\x04\x12*\n#PROTOCOL_TYPE__PB_BOTTLECRUSHER_WEB\x10\x85\x80\x80\x04\x12*\n#PROTOCOL_TYPE__PB_BOTTLECRUSHER_SSR\x10\x86\x80\x80\x04\x12!\n\x1aPROTOCOL_TYPE__PB_BRITEBIN\x10\x87\x80\x80\x04\x12 \n\x19PROTOCOL_TYPE__PB_TRUEAIM\x10\x88\x80\x80\x04\x12%\n\x1ePROTOCOL_TYPE__PB_SEISNODE_DLB\x10\x89\x80\x80\x04\x62\x06proto3'
   ,
   dependencies=[nanopb__pb2.DESCRIPTOR,])
 
@@ -42,11 +42,23 @@ _PB_DEVICE_TYPE_E = _descriptor.EnumDescriptor(
       name='DEVICE_TYPE__BOTTLECRUSHER_SSR', index=2, number=512,
       serialized_options=None,
       type=None),
+    _descriptor.EnumValueDescriptor(
+      name='DEVICE_TYPE__BRITEBIN_CONTROLLER', index=3, number=768,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='DEVICE_TYPE__TRUEAIM_CLIPON', index=4, number=1024,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='DEVICE_TYPE__SEISNODE_DLB', index=5, number=1280,
+      serialized_options=None,
+      type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=42,
-  serialized_end=164,
+  serialized_start=43,
+  serialized_end=270,
 )
 _sym_db.RegisterEnumDescriptor(_PB_DEVICE_TYPE_E)
 
@@ -62,14 +74,46 @@ _PB_PROTOCOL_TYPE_E = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
-      name='PROTOCOL_TYPE__BOOTLOADER', index=1, number=256,
+      name='PROTOCOL_TYPE__RAW_STRING', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PROTOCOL_TYPE__PB_BOOTLOADER', index=2, number=2,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PROTOCOL_TYPE__PB_DISCOVERY', index=3, number=3,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PROTOCOL_TYPE__PB_BOTTLECRUSHER', index=4, number=8388612,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PROTOCOL_TYPE__PB_BOTTLECRUSHER_WEB', index=5, number=8388613,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PROTOCOL_TYPE__PB_BOTTLECRUSHER_SSR', index=6, number=8388614,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PROTOCOL_TYPE__PB_BRITEBIN', index=7, number=8388615,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PROTOCOL_TYPE__PB_TRUEAIM', index=8, number=8388616,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PROTOCOL_TYPE__PB_SEISNODE_DLB', index=9, number=8388617,
       serialized_options=None,
       type=None),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=166,
-  serialized_end=243,
+  serialized_start=273,
+  serialized_end=652,
 )
 _sym_db.RegisterEnumDescriptor(_PB_PROTOCOL_TYPE_E)
 
@@ -77,8 +121,19 @@ pb_protocol_type_e = enum_type_wrapper.EnumTypeWrapper(_PB_PROTOCOL_TYPE_E)
 DEVICE_TYPE__NONE = 0
 DEVICE_TYPE__BOTTLECRUSHER_CONTROLLER = 256
 DEVICE_TYPE__BOTTLECRUSHER_SSR = 512
+DEVICE_TYPE__BRITEBIN_CONTROLLER = 768
+DEVICE_TYPE__TRUEAIM_CLIPON = 1024
+DEVICE_TYPE__SEISNODE_DLB = 1280
 PROTOCOL_TYPE__NONE = 0
-PROTOCOL_TYPE__BOOTLOADER = 256
+PROTOCOL_TYPE__RAW_STRING = 1
+PROTOCOL_TYPE__PB_BOOTLOADER = 2
+PROTOCOL_TYPE__PB_DISCOVERY = 3
+PROTOCOL_TYPE__PB_BOTTLECRUSHER = 8388612
+PROTOCOL_TYPE__PB_BOTTLECRUSHER_WEB = 8388613
+PROTOCOL_TYPE__PB_BOTTLECRUSHER_SSR = 8388614
+PROTOCOL_TYPE__PB_BRITEBIN = 8388615
+PROTOCOL_TYPE__PB_TRUEAIM = 8388616
+PROTOCOL_TYPE__PB_SEISNODE_DLB = 8388617
 
 
 DESCRIPTOR.enum_types_by_name['pb_device_type_e'] = _PB_DEVICE_TYPE_E

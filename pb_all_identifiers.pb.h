@@ -13,22 +13,33 @@
 typedef enum _pb_device_type_e { 
     pb_device_type_e_DEVICE_TYPE__NONE = 0, 
     pb_device_type_e_DEVICE_TYPE__BOTTLECRUSHER_CONTROLLER = 256, 
-    pb_device_type_e_DEVICE_TYPE__BOTTLECRUSHER_SSR = 512 
+    pb_device_type_e_DEVICE_TYPE__BOTTLECRUSHER_SSR = 512, 
+    pb_device_type_e_DEVICE_TYPE__BRITEBIN_CONTROLLER = 768, 
+    pb_device_type_e_DEVICE_TYPE__TRUEAIM_CLIPON = 1024, 
+    pb_device_type_e_DEVICE_TYPE__SEISNODE_DLB = 1280 /* TYPE SHOULD NOT BE LARGER THAN 0x00FFFFFF */
 } pb_device_type_e;
 
 typedef enum _pb_protocol_type_e { 
     pb_protocol_type_e_PROTOCOL_TYPE__NONE = 0, 
-    pb_protocol_type_e_PROTOCOL_TYPE__BOOTLOADER = 256 
+    pb_protocol_type_e_PROTOCOL_TYPE__RAW_STRING = 1, 
+    pb_protocol_type_e_PROTOCOL_TYPE__PB_BOOTLOADER = 2, 
+    pb_protocol_type_e_PROTOCOL_TYPE__PB_DISCOVERY = 3, 
+    pb_protocol_type_e_PROTOCOL_TYPE__PB_BOTTLECRUSHER = 8388612, 
+    pb_protocol_type_e_PROTOCOL_TYPE__PB_BOTTLECRUSHER_WEB = 8388613, 
+    pb_protocol_type_e_PROTOCOL_TYPE__PB_BOTTLECRUSHER_SSR = 8388614, 
+    pb_protocol_type_e_PROTOCOL_TYPE__PB_BRITEBIN = 8388615, 
+    pb_protocol_type_e_PROTOCOL_TYPE__PB_TRUEAIM = 8388616, 
+    pb_protocol_type_e_PROTOCOL_TYPE__PB_SEISNODE_DLB = 8388617 /* TYPE SHOULD NOT BE LARGER THAN 0x00FFFFFF */
 } pb_protocol_type_e;
 
 /* Helper constants for enums */
 #define _pb_device_type_e_MIN pb_device_type_e_DEVICE_TYPE__NONE
-#define _pb_device_type_e_MAX pb_device_type_e_DEVICE_TYPE__BOTTLECRUSHER_SSR
-#define _pb_device_type_e_ARRAYSIZE ((pb_device_type_e)(pb_device_type_e_DEVICE_TYPE__BOTTLECRUSHER_SSR+1))
+#define _pb_device_type_e_MAX pb_device_type_e_DEVICE_TYPE__SEISNODE_DLB
+#define _pb_device_type_e_ARRAYSIZE ((pb_device_type_e)(pb_device_type_e_DEVICE_TYPE__SEISNODE_DLB+1))
 
 #define _pb_protocol_type_e_MIN pb_protocol_type_e_PROTOCOL_TYPE__NONE
-#define _pb_protocol_type_e_MAX pb_protocol_type_e_PROTOCOL_TYPE__BOOTLOADER
-#define _pb_protocol_type_e_ARRAYSIZE ((pb_protocol_type_e)(pb_protocol_type_e_PROTOCOL_TYPE__BOOTLOADER+1))
+#define _pb_protocol_type_e_MAX pb_protocol_type_e_PROTOCOL_TYPE__PB_SEISNODE_DLB
+#define _pb_protocol_type_e_ARRAYSIZE ((pb_protocol_type_e)(pb_protocol_type_e_PROTOCOL_TYPE__PB_SEISNODE_DLB+1))
 
 
 #ifdef __cplusplus
